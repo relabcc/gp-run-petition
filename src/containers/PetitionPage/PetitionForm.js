@@ -127,6 +127,10 @@ const PetitionForm = ({
                 error={touched[key] && errors[key]}
               />
             ))}
+            <Box is="label" my="1em" textAlign="left">
+              <input type="checkbox" name="emailOkTaiwan" onChange={handleChange} />
+              <Box is="span" display="inline" ml="0.5em">{getText('petition.emailOkTaiwan')}</Box>
+            </Box>
           </Box>
         </div>
       )}
@@ -182,19 +186,18 @@ PetitionForm.propTypes = {
   submitted: PropTypes.bool,
 };
 
+const allFileds = fields.concat('emailOkTaiwan');
+
 const formikConfig = {
-  mapPropsToValues: () => fields.reduce((shape, key) => set(shape, key), {}),
+  mapPropsToValues: () => allFileds.reduce((shape, key) => set(shape, key), {}),
   validationSchema: schema,
   validateOnChange: false,
   handleSubmit: (values, {
     props,
     setSubmitting,
   }) => {
-    const neededValues = pick(values, fields);
-    props.onSubmit({
-      ...neededValues,
-      birthYear: Number(neededValues.birthYear),
-    }).then(() => setSubmitting(false))
+    const neededValues = pick(values, allFileds);
+    props.onSubmit(neededValues).then(() => setSubmitting(false))
       .catch((err) => {
         console.error(err);
         setSubmitting(false);

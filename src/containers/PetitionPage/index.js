@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import TWEEN from '@tweenjs/tween.js';
 import scroll from 'window-scroll';
+import isNumber from 'lodash/isNumber';
+import get from 'lodash/get';
 
 import Container from '../../components/Container';
 import Box from '../../components/Box';
@@ -55,6 +57,19 @@ class PetitionPage extends PureComponent {
   }
 
   componentDidMount() {
+    console.log(this.props);
+  }
+
+  componentDidUpdate(prevProps) {
+    const path = 'data.initial';
+    if (isNumber(get(this.props, path)) && !isNumber(get(prevProps, path))) this.setAnimation();
+  }
+
+  componentWillUnmount() {
+    window.cancelAnimationFrame(this.animate);
+  }
+
+  setAnimation = () => {
     this.tween = new TWEEN.Tween({ scrollTop: 0, count: 0 });
     const { top } = this.dummyRef.getBoundingClientRect();
     this.tween.to({
@@ -69,10 +84,6 @@ class PetitionPage extends PureComponent {
       })
       .onComplete(() => this.setState({ animated: true }));
     this.startAnimation();
-  }
-
-  componentWillUnmount() {
-    window.cancelAnimationFrame(this.animate);
   }
 
   toEnding = () => {

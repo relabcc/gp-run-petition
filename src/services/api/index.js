@@ -33,8 +33,11 @@ export default (SubComp) => {
       const formData = new FormData();
       formData.set('owned_taiwan', 'TW');
       toPairs(data).forEach(([key, value]) => formData.set(snakeCase(key), value));
-      request(SUBMIT_ENDPOINT, {
+      return request(SUBMIT_ENDPOINT, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
         body: formData,
       }).then(() => {
         this.setState({ isLoading: false });
@@ -45,7 +48,6 @@ export default (SubComp) => {
     }
 
     render() {
-      if (!this.state.data.goal) return null;
       return createElement(SubComp, {
         ...this.props,
         ...this.state,

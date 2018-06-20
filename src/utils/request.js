@@ -37,6 +37,7 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
+  if (typeof window === 'undefined') return Promise.reject('window is undifined');
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON);

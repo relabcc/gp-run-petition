@@ -6,4 +6,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
   ],
+  // pathPrefix: '//www.greenpeace.org/taiwan/Global/taiwan/code/2018/marathon'
+  pathPrefix: '//relabcc.github.io/gp-run-petition'
 };

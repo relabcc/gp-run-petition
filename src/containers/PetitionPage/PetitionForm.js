@@ -116,6 +116,7 @@ const PetitionForm = ({
           <Box mt="1em" mb="3em">
             {fields.map((key) => (
               <Input
+                key={key}
                 my="1em"
                 name={key}
                 labelWidth="4.5em"

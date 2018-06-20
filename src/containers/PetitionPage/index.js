@@ -27,18 +27,6 @@ import bubble from './bubble.svg';
 
 const percent = (num) => `${num * 100}%`;
 
-const RunnerBox = (props) => (
-  <Box
-    width="60%"
-    position="absolute"
-    left="50%"
-    transform="translate(-50%, -100%)"
-    {...props}
-  >
-    <Runner />
-  </Box>
-);
-
 class PetitionPage extends PureComponent {
   static getDerivedStateFromProps({ data, location: { search } }, prevState) {
     if (data.initial === prevState.petitionCount) return null;
@@ -75,14 +63,14 @@ class PetitionPage extends PureComponent {
     this.tween.to({
       scrollTop: (scroll.getScrollY() + top) - (window.innerHeight / 2),
       count: this.state.realCount,
-    }, Math.min(top * 1.5, 2500))
+    }, Math.min(top * 1.75, 5000))
       .easing(TWEEN.Easing.Quadratic.Out)
       .onUpdate(({ scrollTop, count }) => {
         if (scrollTop > document.documentElement.scrollHeight) this.tween.stop();
         window.scrollTo(0, scrollTop);
         this.setState({ count });
       })
-      .onComplete(() => this.setState({ animated: true }));
+      .onComplete(() => this.setState({ animated: true, animating: false }));
     this.startAnimation();
   }
 
@@ -112,6 +100,7 @@ class PetitionPage extends PureComponent {
   }
 
   startAnimation = () => {
+    this.setState({ animating: true });
     window.requestAnimationFrame(this.animate);
     this.tween.start();
   }
@@ -143,16 +132,24 @@ class PetitionPage extends PureComponent {
       animated,
       modalOpen,
       submitted,
+      animating,
     } = this.state;
     const appear = realCount < goal * 0.95;
     const runnerTop = percent((animated ? realCount : count) / goal);
     return (
-      <Box position="relative">
+      <Box w={1} position="relative" overflow="hidden">
         <Logo />
         <Container px="1.5em" overflow={['hidden', 'visible']}>
           <Box position="relative" pt="100%" pb="30%">
             <Runway length="1000%" cleanTop={runnerTop} target={goal}>
-              <RunnerBox style={{ top: runnerTop }} />
+              <Runner
+                width="60%"
+                position="absolute"
+                left="50%"
+                transform="translate(-50%, -100%)"
+                style={{ top: runnerTop }}
+                animate={animating}
+              />
               <Box
                 innerRef={this.handleDummyRef}
                 position="absolute"

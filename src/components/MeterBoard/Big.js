@@ -4,15 +4,11 @@ import get from 'lodash/get';
 
 import Box from '../Box';
 import BackgroundImage from '../BackgroundImage';
-import board5 from './board-5.svg';
-import board10 from './board-10.svg';
-import board151 from './board-15-1.svg';
+
 import board152 from './board-15-2.svg';
 
 const images = {
-  5: board5,
-  10: board10,
-  15: [board151, board152],
+  15: [null, board152],
 };
 
 const Big = ({ distance, children, ...props }) => (

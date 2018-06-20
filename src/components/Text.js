@@ -16,6 +16,7 @@ import {
 } from 'styled-system';
 import tag from 'clean-tag';
 
+import theme from './ThemeProvider/theme';
 import blacklist from './utils/blacklist';
 import injectProps from './utils/injectProps';
 
@@ -45,7 +46,7 @@ Text.defaultProps = {
 };
 
 Text.bold = (props) => <Text.span fontWeight="bold" {...props} />;
-Text.tetsuBin = (props) => <Text fontFamily="TetsuBin Gothic, sans-serif" {...props} />;
+Text.tetsuBin = (props) => <Text fontFamily={theme.tetsuBin} {...props} />;
 
 range(1, 7).forEach((key) => {
   const h = `h${key}`;

@@ -153,7 +153,7 @@ class PetitionPage extends PureComponent {
               >
                 {animated && (
                   <div>
-                    <Box position="absolute" width="42%" top="0" right="5%" transform="translateY(-250%)">
+                    <Box position="absolute" width="42%" top="0" right="5%" transform="translateY(-270%)">
                       <object data={bubble}>
                         <Text>{getText('petition.letsClean')}</Text>
                       </object>

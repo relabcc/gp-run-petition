@@ -1,0 +1,50 @@
+{
+  "name": "styled-gatsby-starter",
+  "description": "Gatsby hello world starter",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run develop",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^17.2.0",
+    "clean-tag": "^1.0.4",
+    "formik": "^0.11.11",
+    "gatsby": "^1.9.250",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-styled-components": "^2.0.11",
+    "hoist-non-react-statics": "^2.5.0",
+    "immutable": "^3.8.2",
+    "invariant": "^2.2.4",
+    "lodash": "^4.17.10",
+    "open-color": "^1.6.3",
+    "query-string": "^6.1.0",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7",
+    "react-lifecycles-compat": "^3.0.4",
+    "react-measure": "^2.0.2",
+    "react-modal": "^3.4.5",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-immutable": "^4.0.0",
+    "redux-responsive": "^4.3.7",
+    "sanitize.css": "^5.0.0",
+    "styled-components": "^3.2.6",
+    "styled-system": "^2.2.4",
+    "window-scroll": "^1.0.0",
+    "yup": "^0.25.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-react-app": "2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}

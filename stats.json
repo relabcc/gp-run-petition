@@ -21,8 +21,8 @@
       "component---src-pages-gp-run-petition-index-js-e1d42de8e74214f7ff2a.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-44c9c91100367e0d5397.js",
-      "component---src-layouts-index-js-44c9c91100367e0d5397.js.map"
+      "component---src-layouts-index-js-57015a6bca13e23ccf3e.js",
+      "component---src-layouts-index-js-57015a6bca13e23ccf3e.js.map"
     ],
     "path---page-26316-petition-1": [
       "path---page-26316-petition-1-a0e39f21c11f6a62c5ab.js",
@@ -46,9 +46,7 @@
     ],
     "app": [
       "app-f3df12bbbeb1d84067db.js",
-      "build-js-styles.css",
-      "app-f3df12bbbeb1d84067db.js.map",
-      "build-js-styles.css.map"
+      "app-f3df12bbbeb1d84067db.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",

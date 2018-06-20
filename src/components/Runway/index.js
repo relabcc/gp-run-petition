@@ -161,9 +161,36 @@ class Runway extends PureComponent {
           {take(bushRight, bushCount).map(this.renderBush)}
         </BushesContainer>
         <BigFlag top="0" src={start} transform="translateY(-90%)" />
-        <BoardBig top="25%" left="0" distance={5} transform="translate(-40%, -100%)" />
-        <BoardBig top="50%" right="0" distance={10} transform="translate(40%, -100%)" />
-        <BoardBig top="75%" left="0" distance={[15, 0]} transform="translate(-40%, -100%)" />
+        <BoardBig top="25%" left="0" distance={5} transform="translate(-40%, -100%)">
+          <Box
+            position="absolute"
+            top="16%"
+            left="50%"
+            transform="rotate(-20deg) translateX(-45%)"
+          >
+            <Text.tetsuBin f="1.75em">{target * 1 / 4}</Text.tetsuBin>
+          </Box>
+        </BoardBig>
+        <BoardBig top="50%" right="0" distance={10} transform="translate(40%, -100%)">
+          <Box
+            position="absolute"
+            bottom="16%"
+            left="45%"
+            transform="rotate(6deg) translateX(-50%)"
+          >
+            <Text.tetsuBin f={['1.5em', null, '1.75em']} color="white">{target * 1 / 2}</Text.tetsuBin>
+          </Box>
+        </BoardBig>
+        <BoardBig top="75%" left="0" distance={[15, 0]} transform="translate(-40%, -100%)">
+          <Box
+            position="absolute"
+            top="10%"
+            left="50%"
+            transform="rotate(-12deg) translateX(-60%)"
+          >
+            <Text.tetsuBin f="1.75em" color="white">{target * 3 / 4}</Text.tetsuBin>
+          </Box>
+        </BoardBig>
         <BoardBig top="75%" right="0" distance={[15, 1]} transform="translate(40%, -100%)" />
         <BigFlag src={finish} transform="translateY(-110%)" />
       </Box>

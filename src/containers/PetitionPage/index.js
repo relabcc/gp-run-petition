@@ -134,14 +134,15 @@ class PetitionPage extends PureComponent {
       submitted,
       animating,
     } = this.state;
-    const appear = realCount < goal * 0.95;
-    const runnerTop = percent((animated ? realCount : count) / goal);
+    const target = goal || 0;
+    const appear = realCount < target * 0.95;
+    const runnerTop = percent((animated ? realCount : count) / target);
     return (
       <Box w={1} position="relative" overflow="hidden">
         <Logo />
         <Container px="1.5em" overflow={['hidden', 'visible']}>
           <Box position="relative" pt="100%" pb="30%">
-            <Runway length="1000%" cleanTop={runnerTop} target={goal}>
+            <Runway length="1000%" cleanTop={runnerTop} target={target}>
               <Runner
                 width="60%"
                 position="absolute"
@@ -156,7 +157,7 @@ class PetitionPage extends PureComponent {
                 textAlign="center"
                 left="0"
                 right="0"
-                style={{ top: percent(realCount / goal) }}
+                style={{ top: percent(realCount / target) }}
                 zIndex={5}
               >
                 {animated && (

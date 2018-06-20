@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import 'sanitize.css';
 
 import theme from './theme';
 import Box from '../Box';

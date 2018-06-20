@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { withPrefix } from 'gatsby-link'
+import config from '../../gatsby-config';
 
 import Box from '../components/Box';
 import ThemeProvider from '../components/ThemeProvider';
+
+const withPrefix = (path) => config.pathPrefix + path;
 
 const Layout = ({ children, data }) => (
   <Box height="100%">
@@ -18,7 +20,8 @@ const Layout = ({ children, data }) => (
       <meta name="description" content={data.site.siteMetadata.description} />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
-      <meta property="og:image" content={withPrefix('/og_image.png')} />
+      <meta property="og:image" content={`https:${withPrefix('/og_image.png')}`} />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" />
     </Helmet>
     <ThemeProvider>
       {children()}
@@ -36,7 +39,8 @@ export const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
-        title
+        title,
+        description
       }
     }
   }

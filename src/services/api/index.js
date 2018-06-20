@@ -14,13 +14,15 @@ export default (SubComp) => {
       data: {},
     }
 
-    componentWillMount() {
+    componentDidMount() {
       this.request();
     }
 
-    request = (params) => {
+    request = () => {
+      console.log('requesting progress data');
       this.setState({ isLoading: true });
       request(API_ENDPOINT).then((res) => {
+        console.log('received progress data');
         this.setState({ isLoading: false, data: JSON.parse(res.jsonContent) });
       }).catch((error) => {
         console.error(error);

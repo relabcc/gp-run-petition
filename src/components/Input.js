@@ -8,6 +8,7 @@ import Box from './Box';
 import Text from './Text';
 
 const TextInput = styled.input`
+  font-family: inherit;
   width: 100%;
   padding: 0;
   border: none;

@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from './theme';
 import Box from '../Box';
+import './global-styles';
 import '../../web-font';
 
 export default (props) => (

@@ -33,7 +33,7 @@ export default (SubComp) => {
     submit = (data) => {
       this.setState({ isLoading: true });
       const formData = new FormData();
-      formData.set('owned_taiwan', 'TW');
+      formData.set('supporter.NOT_TAGGED_28', 'TW');
       toPairs(data).forEach(([key, value]) => formData.set(snakeCase(key), value));
       return request(SUBMIT_ENDPOINT, {
         method: 'POST',

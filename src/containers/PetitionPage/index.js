@@ -7,6 +7,7 @@ import TWEEN from '@tweenjs/tween.js';
 import scroll from 'window-scroll';
 import isNumber from 'lodash/isNumber';
 import get from 'lodash/get';
+import mapKeys from 'lodash/mapKeys';
 
 import Container from '../../components/Container';
 import Box from '../../components/Box';
@@ -26,6 +27,14 @@ import PetitionCounter from './PetitionCounter';
 import bubble from './bubble.svg';
 
 const percent = (num) => `${num * 100}%`;
+
+const remapFields = {
+  fullName: 'supporter.NOT_TAGGED_19',
+  dateOfBirth: 'supporter.NOT_TAGGED_6',
+  email: 'supporter.emailAddress',
+  phoneNumber: 'supporter.phoneNumber',
+  emailOkTaiwan: 'supporter.questions.7276',
+};
 
 class PetitionPage extends PureComponent {
   static getDerivedStateFromProps({ data, location: { search } }, prevState) {
@@ -118,7 +127,8 @@ class PetitionPage extends PureComponent {
   handleClose = () => this.setState({ modalOpen: false })
 
   handleSubmit = (data) => {
-    return this.props.submitForm(data)
+    const remappedData = mapKeys(data, (value, key) => remapFields[key]);
+    return this.props.submitForm(remappedData)
       .then(() => {
         this.setState({ submitted: true });
       });
@@ -167,18 +177,16 @@ class PetitionPage extends PureComponent {
                         <Text>{getText('petition.letsClean')}</Text>
                       </object>
                     </Box>
-                    {!submitted && (
-                      <Box w="100%" transform={['translateY(20%)', null, null, null, 'translateY(40%)']}>
-                        <DoubleLayerButton
-                          w={1 / 2}
-                          f={['1.2em', '2em']}
-                          py="0.5em"
-                          onClick={this.handleOpen}
-                        >
-                          <Text>{getText('petition.action')}</Text>
-                        </DoubleLayerButton>
-                      </Box>
-                    )}
+                    <Box w="100%" transform={['translateY(20%)', null, null, null, 'translateY(40%)']}>
+                      <DoubleLayerButton
+                        w={1 / 2}
+                        f={['1.2em', '2em']}
+                        py="0.5em"
+                        onClick={this.handleOpen}
+                      >
+                        <Text>{getText(['petition', submitted ? 'share' : 'action'])}</Text>
+                      </DoubleLayerButton>
+                    </Box>
                     {appear && (
                       <CircleWithArrow
                         w={['12%', null, null, '15%']}
@@ -195,7 +203,7 @@ class PetitionPage extends PureComponent {
                   </div>
                 )}
               </Box>
-              {!submitted && appear && (
+              {appear && (
                 <Box position="absolute" bottom="0" w={1} transform={['translateY(270%)', null, null, 'translateY(250%)']}>
                   <CircleWithArrow
                     w={['12%', null, null, '15%']}

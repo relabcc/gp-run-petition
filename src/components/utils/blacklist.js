@@ -15,4 +15,5 @@ export default [
   'hoverBorder',
   'noUnderline',
   'whiteSpace',
+  'dispatch',
 ];

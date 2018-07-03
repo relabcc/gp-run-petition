@@ -198,6 +198,7 @@ const formikConfig = {
     setSubmitting,
   }) => {
     const neededValues = pick(values, allFileds);
+    console.log(neededValues.emailOkTaiwan);
     props.onSubmit({
       ...neededValues,
       emailOkTaiwan: neededValues.emailOkTaiwan ? 'Y' : 'N',

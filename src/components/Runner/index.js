@@ -16,7 +16,7 @@ const run = keyframes`
   }
 `;
 
-const Animatable = styled(BackgroundImage)`
+const Animatable = styled(({ animate, ...props }) => <BackgroundImage {...props} />)`
   background-position: 0 0;
   ${({ animate }) => animate && `
     animation: ${run} 1s steps(3) infinite;

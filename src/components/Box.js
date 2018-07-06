@@ -18,6 +18,7 @@ import {
   borderRadius,
   minWidth,
   maxWidth,
+  maxHeight,
   lineHeight,
   zIndex,
   flex,
@@ -38,6 +39,7 @@ const Box = styled(tag)`
   ${textAlign}
   ${minWidth}
   ${maxWidth}
+  ${maxHeight}
   ${top}
   ${left}
   ${right}
@@ -47,6 +49,8 @@ const Box = styled(tag)`
   ${borderRadius}
   ${flex}
   ${injectProps.responsive('overflow')}
+  ${injectProps.responsive('overflowX')}
+  ${injectProps.responsive('overflowY')}
   ${injectProps.responsive('transform')}
   ${injectProps('transition')}
   ${injectProps.responsive('opacity', { alias: 'alpha' })}

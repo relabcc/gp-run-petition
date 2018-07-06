@@ -35,6 +35,7 @@
     "redux-immutable": "^4.0.0",
     "redux-responsive": "^4.3.7",
     "sanitize.css": "^5.0.0",
+    "scrollingelement": "^1.5.2",
     "styled-components": "^3.2.6",
     "styled-system": "^2.2.4",
     "whatwg-fetch": "^2.0.4",

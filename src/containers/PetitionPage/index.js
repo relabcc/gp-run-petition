@@ -53,10 +53,6 @@ class PetitionPage extends PureComponent {
     modalOpen: false,
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   componentDidUpdate(prevProps) {
     const path = 'data.initial';
     if (isNumber(get(this.props, path)) && !isNumber(get(prevProps, path))) this.setAnimation();
@@ -70,7 +66,7 @@ class PetitionPage extends PureComponent {
     this.tween = new TWEEN.Tween({ scrollTop: 0, count: 0 });
     const { top } = this.dummyRef.getBoundingClientRect();
     this.tween.to({
-      scrollTop: (scroll.getScrollY() + top) - (window.innerHeight / 2),
+      scrollTop: (scroll.getScrollY() + top) - (window.innerHeight * 0.66),
       count: this.state.realCount,
     }, Math.min(top * 1.75, 5000))
       .easing(TWEEN.Easing.Quadratic.Out)
@@ -99,7 +95,7 @@ class PetitionPage extends PureComponent {
     const { top } = this.dummyRef.getBoundingClientRect();
     this.tweenPetition = new TWEEN.Tween({ scrollTop: scroll.getScrollY() });
     this.tweenPetition.to({
-      scrollTop: (scroll.getScrollY() + top) - (window.innerHeight / 2),
+      scrollTop: (scroll.getScrollY() + top) - (window.innerHeight * 0.66),
     }, 2000)
       .easing(TWEEN.Easing.Quadratic.InOut)
       .onUpdate(({ scrollTop }) => {

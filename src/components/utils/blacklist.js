@@ -8,6 +8,8 @@ export default [
   'transform',
   'transition',
   'overflow',
+  'overflowX',
+  'overflowY',
   'opacity',
   'alpha',
   'hoverColor',

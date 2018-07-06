@@ -6,7 +6,7 @@ import tetsuBinTtf from './minified/TetsuBinGothic.ttf';
 injectGlobal`
   @font-face {
     font-family: 'TetsuBin Gothic';
-    src: local("TetsuBin Gothic"),
+    src: local('TetsuBin Gothic'),
       url(${tetsuBinWoff}),
       url(${tetsuBinTtf});
   }

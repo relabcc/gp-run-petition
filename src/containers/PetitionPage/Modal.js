@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import ReactModal from 'react-modal';
+
+import disableScroll from '../../utils/disable-scroll';
 
 ReactModal.setAppElement('#___gatsby');
 
@@ -21,11 +23,30 @@ const customStyles = {
   },
 };
 
-export default (props) => (
-  <ReactModal
-    style={customStyles}
-    shouldCloseOnEsc={false}
-    shouldCloseOnOverlayClick={false}
-    {...props}
-  />
-);
+export default class Modal extends PureComponent {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isOpen !== this.props.isOpen) {
+      if (this.props.isOpen) {
+        disableScroll.on(document.body, { whitelist: [this.modalEle] });
+      } else {
+        disableScroll.off();
+      }
+    }
+  }
+
+  handleRef = ({ node }) => {
+    this.modalEle = node;
+  }
+
+  render() {
+    return (
+      <ReactModal
+        style={customStyles}
+        shouldCloseOnEsc={false}
+        shouldCloseOnOverlayClick={false}
+        ref={this.handleRef}
+        {...this.props}
+      />
+    );
+  }
+}

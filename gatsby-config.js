@@ -7,6 +7,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
   ],
-  pathPrefix: '/taiwan/Global/taiwan/code/2018/marathon'
-  // pathPrefix: '//relabcc.github.io/gp-run-petition'
+  // pathPrefix: '/taiwan/Global/taiwan/code/2018/marathon'
+  pathPrefix: '/gp-run-petition'
 };

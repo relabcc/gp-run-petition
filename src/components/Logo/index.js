@@ -12,6 +12,7 @@ const Logo = () => (
     left="2%"
     w="100%"
     display={['none', null, null, 'block']}
+    zIndex={50}
   >
     <Box w="15%" maxWidth="15em">
       <BackgroundImage src={smalllogo} ratio={70 / 225} />

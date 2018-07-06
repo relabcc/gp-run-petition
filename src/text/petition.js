@@ -26,6 +26,4 @@ module.exports = {
   go: '出發',
   toending: '不是跑步到終點',
   done: 'FINISH',
-  emailOkTaiwan: '我要即時收到最新專案訊息，知道更多參與和協助的方法。',
-  privacy: '（綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考隱私保護政策。）',
 };

@@ -132,9 +132,11 @@ const PetitionForm = ({
               ))}
               <Box is="label" my="1em" textAlign="left">
                 <input type="checkbox" name="emailOkTaiwan" onChange={handleChange} checked={values.emailOkTaiwan} />
-                <Box is="span" display="inline" ml="0.5em">{getText('petition.emailOkTaiwan')}</Box>
+                <Box is="span" display="inline" ml="0.5em">我要即時收到最新專案訊息，知道更多參與和協助的方法。</Box>
               </Box>
-              <Text f="0.8em" mt="0.5em">{getText('petition.privacy')}</Text>
+              <Text f="0.8em" mt="0.5em">
+                （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
+              </Text>
             </Box>
           </Box>
         )}

@@ -20,7 +20,7 @@ const Layout = ({ children, data }) => (
       <meta name="description" content={data.site.siteMetadata.description} />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
-      <meta property="og:image" content={`https:${withPrefix('/og_image.png')}`} />
+      <meta property="og:image" content={`https://secured-static.greenpeace.org${withPrefix('/og_image.png')}`} />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" />
     </Helmet>
     <ThemeProvider>

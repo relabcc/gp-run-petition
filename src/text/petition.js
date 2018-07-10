@@ -17,7 +17,7 @@ module.exports = {
   dateOfBirth: '出生年份',
   submit: '送出',
   confirm: '確認',
-  thanks: '感謝你的連署！',
+  thanks: '感謝你一起無拘無塑',
   ending: '終點',
   toPetition: '返回',
   share: '支持與分享',

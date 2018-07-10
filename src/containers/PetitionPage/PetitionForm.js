@@ -161,7 +161,7 @@ const PetitionForm = ({
               </LinksButton>
               <LinksButton
                 icon={<FB />}
-                href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fgreenrun.relab.cc"
+                href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fact.gp/2NAOGZ8"
               >
                 {getText('petition.FB')}
               </LinksButton>
@@ -207,7 +207,6 @@ const formikConfig = {
     setSubmitting,
   }) => {
     const neededValues = pick(values, allFileds);
-    console.log(neededValues.emailOkTaiwan);
     props.onSubmit({
       ...neededValues,
       emailOkTaiwan: neededValues.emailOkTaiwan ? 'Y' : 'N',

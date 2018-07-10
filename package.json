@@ -38,6 +38,7 @@
     "scrollingelement": "^1.5.2",
     "styled-components": "^3.2.6",
     "styled-system": "^2.2.4",
+    "uuid": "^3.3.2",
     "whatwg-fetch": "^2.0.4",
     "window-scroll": "^1.0.0",
     "yup": "^0.25.1"

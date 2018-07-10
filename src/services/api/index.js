@@ -1,7 +1,6 @@
 import { PureComponent, createElement } from 'react';
-
-import toPairs from 'lodash/toPairs';
-import snakeCase from 'lodash/snakeCase';
+import uuidv1 from 'uuid/v1';
+import queryString from 'query-string';
 
 import request from '../../utils/request';
 
@@ -16,14 +15,13 @@ export default (SubComp) => {
 
     componentDidMount() {
       this.request();
+      this.uuid = uuidv1().replace(/-/g, '');
     }
 
     request = () => {
-      console.log('requesting progress data');
       this.setState({ isLoading: true });
       request(API_ENDPOINT).then((res) => {
-        console.log('received progress data');
-        this.setState({ isLoading: false, data: JSON.parse(res.jsonContent) });
+        this.setState({ isLoading: false, data: res });
       }).catch((error) => {
         console.error(error);
         this.setState({ isLoading: false, error });
@@ -32,15 +30,15 @@ export default (SubComp) => {
 
     submit = (data) => {
       this.setState({ isLoading: true });
-      const formData = new FormData();
-      formData.set('supporter.NOT_TAGGED_28', 'TW');
-      toPairs(data).forEach(([key, value]) => formData.set(snakeCase(key), value));
+      data['supporter.NOT_TAGGED_28'] = 'TW';
+      data['supporter.NOT_TAGGED_6'] = `01/01/${data['supporter.NOT_TAGGED_6']}`;
+      data.sessionId = `${this.uuid}-server10228`;
       return request(SUBMIT_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: formData,
+        body: queryString.stringify(data),
       }).then(() => {
         this.setState({ isLoading: false });
       }).catch((error) => {
@@ -54,6 +52,7 @@ export default (SubComp) => {
         ...this.props,
         ...this.state,
         submitForm: this.submit,
+        updateStat: this.request,
       });
     }
   }

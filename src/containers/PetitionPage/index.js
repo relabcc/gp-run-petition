@@ -37,13 +37,19 @@ const remapFields = {
 };
 
 class PetitionPage extends PureComponent {
-  static getDerivedStateFromProps({ data, location: { search } }, prevState) {
-    if (data.initial === prevState.petitionCount) return null;
+  static getDerivedStateFromProps({ data, location: { search } }) {
     const searchParams = queryString.parse(search);
-    const realCount = Number(searchParams.count || data.initial || 0);
+    const forceOpen = +searchParams.open === 1;
+    if (!data.jsonContent) return { forceOpen };
+    const jsonContent = JSON.parse(data.jsonContent);
+    const base = jsonContent.initial || 0;
+    const realCount = base + +get(data, ['data', 'rows', 0, 'columns', 4, 'value'], 0);
+    const target = jsonContent.goal;
 
     return {
       realCount,
+      target,
+      forceOpen,
     };
   }
 
@@ -53,9 +59,8 @@ class PetitionPage extends PureComponent {
     modalOpen: false,
   }
 
-  componentDidUpdate(prevProps) {
-    const path = 'data.initial';
-    if (isNumber(get(this.props, path)) && !isNumber(get(prevProps, path))) this.setAnimation();
+  componentDidUpdate(prevProps, prevState) {
+    if (isNumber(this.state.target) && !isNumber(prevState.target)) this.setAnimation();
   }
 
   componentWillUnmount() {
@@ -63,19 +68,20 @@ class PetitionPage extends PureComponent {
   }
 
   setAnimation = () => {
+    const { forceOpen } = this.state;
     this.tween = new TWEEN.Tween({ scrollTop: 0, count: 0 });
     const { top } = this.dummyRef.getBoundingClientRect();
     this.tween.to({
       scrollTop: (scroll.getScrollY() + top) - (window.innerHeight * 0.66),
       count: this.state.realCount,
-    }, Math.min(top * 1.75, 5000))
+    }, forceOpen ? 0 : Math.min(top * 1.75, 5000))
       .easing(TWEEN.Easing.Quadratic.Out)
       .onUpdate(({ scrollTop, count }) => {
         if (scrollTop > document.documentElement.scrollHeight) this.tween.stop();
         window.scrollTo(0, scrollTop);
         this.setState({ count });
       })
-      .onComplete(() => this.setState({ animated: true, animating: false }));
+      .onComplete(() => this.setState({ animated: true, animating: false, modalOpen: forceOpen }));
     this.startAnimation();
   }
 
@@ -127,11 +133,11 @@ class PetitionPage extends PureComponent {
     return this.props.submitForm(remappedData)
       .then(() => {
         this.setState({ submitted: true });
+        this.props.updateStat();
       });
   }
 
   render() {
-    const { data: { goal } } = this.props;
     const {
       count,
       realCount,
@@ -139,8 +145,8 @@ class PetitionPage extends PureComponent {
       modalOpen,
       submitted,
       animating,
+      target,
     } = this.state;
-    const target = goal || 0;
     const appear = realCount < target * 0.95;
     const runnerTop = percent((animated ? realCount : count) / target);
     return (

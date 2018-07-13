@@ -45,6 +45,7 @@ class PetitionPage extends PureComponent {
     const base = jsonContent.initial || 0;
     const realCount = base + +get(data, ['data', 'rows', 0, 'columns', 4, 'value'], 0);
     const target = jsonContent.goal;
+    console.log(forceOpen);
 
     return {
       realCount,

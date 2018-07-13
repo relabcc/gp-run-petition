@@ -88,7 +88,7 @@ const PetitionForm = ({
   <Border
     border="0.25em solid black"
     borderRadius="0.01em"
-    w="25em"
+    w={['20em', '25em']}
     py="1em"
     position="relative"
   >
@@ -161,7 +161,7 @@ const PetitionForm = ({
               </LinksButton>
               <LinksButton
                 icon={<FB />}
-                href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fact.gp/2NAOGZ8"
+                href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fact.gp/2JlrNWw"
               >
                 {getText('petition.FB')}
               </LinksButton>

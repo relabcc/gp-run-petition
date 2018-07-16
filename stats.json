@@ -1,36 +1,52 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-f3ff07a99d7b9eed5e7b.js",
-      "component---src-pages-index-js-f3ff07a99d7b9eed5e7b.js.map"
+      "component---src-pages-index-js-75c55dbca3cd2d5ba6eb.js",
+      "component---src-pages-index-js-75c55dbca3cd2d5ba6eb.js.map"
+    ],
+    "component---src-pages-taiwan-zh-sites-2018-marathon-js": [
+      "component---src-pages-taiwan-zh-sites-2018-marathon-js-2c933745464fd040ba2c.js",
+      "component---src-pages-taiwan-zh-sites-2018-marathon-js-2c933745464fd040ba2c.js.map"
     ],
     "path---": [
-      "path----86a0f21b2712db7c4849.js",
-      "path----86a0f21b2712db7c4849.js.map"
+      "path----72225ca7cfde4ffd7d53.js",
+      "path----72225ca7cfde4ffd7d53.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-24a2563f1c8ba5554f1f.js",
-      "component---src-layouts-index-js-24a2563f1c8ba5554f1f.js.map"
+      "component---src-layouts-index-js-62de8b4e8e18a7fbe075.js",
+      "component---src-layouts-index-js-62de8b4e8e18a7fbe075.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-44c8342cc0b7003b3a87.js",
-      "component---src-pages-404-js-44c8342cc0b7003b3a87.js.map"
+      "component---src-pages-404-js-75c55dbca3cd2d5ba6eb.js",
+      "component---src-pages-404-js-75c55dbca3cd2d5ba6eb.js.map"
     ],
     "commons": [
-      "commons-69e8a8779c5f2df51b4f.js",
-      "commons-69e8a8779c5f2df51b4f.js.map"
+      "commons-80899c8052a68f6c68df.js",
+      "commons-80899c8052a68f6c68df.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-2222dad512bcc820e5eb.js",
-      "app-2222dad512bcc820e5eb.js.map"
+      "app-ffae97d024ed9765de64.js",
+      "app-ffae97d024ed9765de64.js.map"
+    ],
+    "path---taiwan-marathon": [
+      "path---taiwan-marathon-a0e39f21c11f6a62c5ab.js",
+      "path---taiwan-marathon-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---taiwan-zh-sites-2018-marathon": [
+      "path---taiwan-zh-sites-2018-marathon-a0e39f21c11f6a62c5ab.js",
+      "path---taiwan-zh-sites-2018-marathon-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-taiwan-marathon-js": [
+      "component---src-pages-taiwan-marathon-js-d78a38cc40d33dc2d1dd.js",
+      "component---src-pages-taiwan-marathon-js-d78a38cc40d33dc2d1dd.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",

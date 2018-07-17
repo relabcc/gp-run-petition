@@ -100,7 +100,7 @@ const PetitionForm = ({
         border="0.25em solid black"
       ><Close /></Button>
     </Box>
-    <Box maxHeight="75vh" overflowX="hidden" overflowY="auto" px="1em">
+    <Box maxHeight="66vh" overflowX="hidden" overflowY="auto" px="1em">
       <Box textAlign="center">
         {submitted ? (
           <Box px="10%" py="1em">

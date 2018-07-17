@@ -10,7 +10,7 @@ const customStyles = {
     zIndex: 99,
   },
   content: {
-    top: '50%',
+    top: 'calc(50% + 1em)',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -35,14 +35,18 @@ export default class Modal extends PureComponent {
 
   freeze = () => {
     this.scrollY = scroll.getScrollY();
-    document.body.style.setProperty('position', 'fixed');
-    document.body.style.setProperty('top', `-${this.scrollY}px`);
+    setTimeout(() => {
+      document.body.style.setProperty('position', 'fixed');
+      document.body.style.setProperty('top', `-${this.scrollY}px`);
+    });
   }
 
   unfreeze = () => {
     document.body.style.setProperty('position', 'static');
     document.body.style.setProperty('top', 'auto');
-    window.scrollTo(0, this.scrollY);
+    setTimeout(() => {
+      window.scrollTo(0, this.scrollY);
+    });
   }
 
   handleRef = ({ node }) => {

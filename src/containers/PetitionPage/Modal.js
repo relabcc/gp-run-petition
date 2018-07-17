@@ -42,8 +42,8 @@ export default class Modal extends PureComponent {
     return (
       <ReactModal
         style={customStyles}
-        shouldCloseOnEsc={false}
         shouldCloseOnOverlayClick={false}
+        shouldCloseOnEsc={false}
         ref={this.handleRef}
         {...this.props}
       />

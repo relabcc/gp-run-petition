@@ -27,7 +27,6 @@ const Input = ({
   disabled,
   value,
   onChange,
-  onKeyUp,
   onBlur,
   error,
   ...props
@@ -43,7 +42,6 @@ const Input = ({
         disabled,
         value,
         onChange,
-        onKeyUp,
         onBlur,
       })}
       {error && (

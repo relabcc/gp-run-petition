@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import ReactModal from 'react-modal';
-
-import disableScroll from '../../utils/disable-scroll';
+import scroll from 'window-scroll';
 
 ReactModal.setAppElement('#___gatsby');
 
@@ -27,11 +26,23 @@ export default class Modal extends PureComponent {
   componentDidUpdate(prevProps) {
     if (prevProps.isOpen !== this.props.isOpen) {
       if (this.props.isOpen) {
-        disableScroll.on(document.body, { whitelist: [this.modalEle] });
+        this.freeze();
       } else {
-        disableScroll.off();
+        this.unfreeze();
       }
     }
+  }
+
+  freeze = () => {
+    this.scrollY = scroll.getScrollY();
+    document.body.style.setProperty('position', 'fixed');
+    document.body.style.setProperty('top', `-${this.scrollY}px`);
+  }
+
+  unfreeze = () => {
+    document.body.style.setProperty('position', 'static');
+    document.body.style.setProperty('top', 'auto');
+    window.scrollTo(0, this.scrollY);
   }
 
   handleRef = ({ node }) => {

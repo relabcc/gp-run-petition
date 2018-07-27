@@ -4,10 +4,11 @@ import constants from 'styled-system/dist/constants';
 const emToPx = (em) => em * 16;
 
 export const breakpoints = [30, 48, 62, 92, 105].map(emToPx);
-export const containerWidth = [36, 40, 40, 40, 50].map(emToPx);
+export const petitionContainerWidth = [48, 48, 48, 48, 60, 75].map(emToPx);
+export const containerWidth = [48, 48, 48, 48, 60, 75].map(emToPx);
+export const resultContainerWidth =  [36, 40, 40, 40, 50].map(emToPx);
 
 const font = 'Arial, "PingFang TC", "HeiTi TC", "Microsoft JhengHei", sans-serif';
-const tetsuBin = 'TetsuBin Gothic, sans-serif';
 
 const white = '#fff';
 const black = '#000';
@@ -37,6 +38,5 @@ export default merge(constants, {
   breakpoints,
   containerWidth,
   font,
-  tetsuBin,
   duration: 250,
 });

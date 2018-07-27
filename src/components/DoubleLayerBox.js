@@ -28,11 +28,12 @@ const DoubleLayerBox = ({
   mr,
   border: '4px solid',
   borderColor,
+  display: 'inline-block',
   p: '0.5em',
   bg: outerBg,
   w,
   width,
-}, <Border bg="white" position={position} border={border} borderColor={borderColor} {...props} />);
+}, <Border w={1} bg="white" position={position} border={border} borderColor={borderColor} {...props} />);
 
 const responsivePropTypes = PropTypes.oneOfType([
   PropTypes.number,

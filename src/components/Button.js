@@ -16,6 +16,7 @@ import {
   display,
 } from 'styled-system';
 import tag from 'clean-tag';
+import bowser from 'bowser';
 
 import { getColorByPropKey } from './utils/getColor';
 import blacklist from './utils/blacklist';
@@ -47,7 +48,9 @@ export const buttonStyle = css`
   appearance: none;
   transition: all ${themeGet('duration', 250)}ms;
   cursor: pointer;
-  &:hover,
+  &:hover {
+    ${(props) => !bowser.ios && !props.disabled && active}
+  }
   &:focus {
     ${(props) => !props.disabled && active}
   }

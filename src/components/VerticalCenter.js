@@ -18,10 +18,12 @@ class VerticalCenter extends PureComponent {
       ...props
     } = this.props;
     const shouldCenter = typeof window !== 'undefined' && window.innerHeight > height;
+    // const shouldCenter = 1;
+    // console.log(window.innerHeight, height);
     return (
       <Box
         position="relative"
-        height={shouldCenter && '100%'}
+        height="100%"
         {...props}
       >
         <Box

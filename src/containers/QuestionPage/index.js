@@ -63,6 +63,7 @@ const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
 };
 
 QuestionPage.propTypes = {
+  pathContext: PropTypes.object,
   answers: PropTypes.array,
   setAnswer: PropTypes.func,
 };

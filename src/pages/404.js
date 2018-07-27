@@ -1,12 +1,4 @@
 import React from 'react';
-import ImagePreloader from '../components/ImagePreloader';
-import Petition from '../containers/PetitionPage';
-import assets from '../assets';
+import { Redirect } from 'react-router-dom';
 
-const Index = (props) => (
-  <ImagePreloader images={assets}>
-    <Petition {...props} />
-  </ImagePreloader>
-);
-
-export default Index;
+export default () => <Redirect to="/" />;

@@ -17,7 +17,7 @@ import Runway from '../../components/Runway';
 import Runner from '../../components/Runner';
 import DoubleLayerButton from '../../components/DoubleLayerButton';
 import Logo from '../../components/Logo';
-import { resultContainerWidth } from '../../components/ThemeProvider/theme';
+import { petitionContainerWidth } from '../../components/ThemeProvider/theme';
 import api from '../../services/api';
 
 import getText from '../../text';
@@ -153,7 +153,7 @@ class PetitionPage extends PureComponent {
     return (
       <Box w={1} position="relative" overflow="hidden">
         <Logo />
-        <Container maxWidth={resultContainerWidth} px="1.5em" overflow={['hidden', null, 'visible']}>
+        <Container maxWidth={petitionContainerWidth} px="1.5em" overflow={['hidden', null, 'visible']}>
           <Box position="relative" pt="100%" pb="30%">
             <Runway length="1000%" cleanTop={runnerTop} target={target}>
               <Runner

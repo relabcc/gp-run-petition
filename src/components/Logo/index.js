@@ -11,7 +11,7 @@ const Logo = () => (
     top="0"
     left="2%"
     w="100%"
-    display={['none', null, null, 'block']}
+    display={['none', null, null, null, 'block']}
     zIndex={50}
   >
     <Box w="15%" maxWidth="15em">

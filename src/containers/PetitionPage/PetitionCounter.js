@@ -45,13 +45,13 @@ const PetitionCounter = ({ browser, count, ...props }) => browser.greaterThan.md
     right="0"
     left="0"
     top="0"
-    f={['1.2em', '1.5em']}
+    f={['1.2em', null, '1.5em']}
     bg="white"
     {...props}
   >
     <Border border="2px solid" p="0.25em">
       <Flex align="center" justify="center">
-        <Box w={['10%', null, '8%']} px={['0.25em', '0.5em']}>
+        <Box w={['10%', null, null, '8%']} px={['0.25em', null, '0.5em']}>
           <Head />
         </Box>
         <Text pr="1.25em">{getText('petition.current')}</Text>

@@ -42,9 +42,9 @@ const Mobile = () => (
         <Box textAlign="center" pb="1em" key={index}>
           <Border
             py="1em"
-            px={['1em', '2em']}
-            w={['18em', '20em', '20em']}
-            f={['1em', '1.2em']}
+            px={['1em', null, '2em']}
+            w={['18em', null, '20em', '20em']}
+            f={['1em', null, '1.2em']}
             my="1em"
             bg="white"
             border="2px solid"
@@ -64,9 +64,9 @@ const Mobile = () => (
         {downs.map((down, index) => (
           <Box textAlign="center" pb="1em" key={index}>
             <Border
-              w={['20em', '30em']}
+              w={['20em', null, '30em']}
               py="1em"
-              px={['2em', '4em']}
+              px={['2em', null, '4em']}
               my="1.5em"
               bg={index > 0 ? 'orange' : 'white'}
               border="2px solid"

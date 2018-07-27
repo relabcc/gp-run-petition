@@ -24,7 +24,7 @@ module.exports = {
   donate: '捐款支持',
   FB: 'FB分享',
   go: '出發',
-  toending: '不是跑步到終點',
+  toending: '不是跑不到終點',
   done: 'FINISH',
   support: '連署支持無拘無塑來跑步',
   mobilesupport: '無拘無塑來跑步',

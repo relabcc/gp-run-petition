@@ -28,29 +28,29 @@ const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
   const isLast = pageId === pictures.length;
 
   return (
-    <Box position="relative" height="100%">
+    <Box position="relative" height="100%" overflow={['hidden', null, 'visible']}>
       <Logo />
       <Container height="100%">
         <VerticalCenter>
           <Bubble number={pageId}>
             {question.title}
           </Bubble>
-          <Box px={['5%', '15%']}>
+          <Box px={[null, null, '18%']} mx={['-5%', '-8%', '8%']}>
             <BackgroundImage w={1} src={pictures[qId]} ratio={540 / 1020} />
           </Box>
           <Flex justify="center" key={qId}>
             {question.options.map((optText, optId) => (
               <Box key={optId} transform="translateY(-25%)">
                 <LinksButton
-                  w={['12em', '15em']}
-                  px={['0em', '1em']}
+                  w={['12em', null, '15em']}
+                  px={['0em', null, '1em']}
                   py="0.5em"
                   to={isLast ? '/quiz/result' : `/quiz/question/${pageId + 1}`}
                   onClick={() => setAnswer(qId, optId)}
-                  mx={['0.25em', '1em']}
+                  mx={['0.25em', null, '1em']}
                   active={answers[qId] === optId}
                 >
-                  <Text f={['1em', '1.2em']} whiteSpace="pre" textAlign="center">{optText}</Text>
+                  <Text f={['1em', null, '1.2em']} lineHeight="1.3" whiteSpace="pre" textAlign="center">{optText}</Text>
                 </LinksButton>
               </Box>
             ))}

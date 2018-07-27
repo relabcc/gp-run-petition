@@ -10,6 +10,7 @@ import zip from 'lodash/zip';
 import { breakpoints } from '../components/ThemeProvider/theme';
 
 const names = [
+  'xxs',
   'xs',
   'sm',
   'md',

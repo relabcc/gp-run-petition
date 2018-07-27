@@ -11,8 +11,8 @@ import numberlogo from './q-number.svg';
 const Bubble = ({ number, children, ...props }) => (
   <Box
     position="relative"
-    pt={['5em', null, null, null, '3.5em']}
-    mx={[null, '0.5em', '10%', '11%', '15%', '20%']}
+    pt={['5em', null, '6em', null, null, '3.5em']}
+    mx={[null, null, '11%', '15%', '11%', '15%', '20%']}
     {...props}
   >
     <BackgroundImage position="absolute" src={bubble} ratio={240 / 686}>
@@ -23,7 +23,7 @@ const Bubble = ({ number, children, ...props }) => (
         transform="translate(-50%, -50%)"
       >
         <Text
-          f={['1em', '1.4em', '1.6em']}
+          f={['1.1em', null, '1.25em', '1.5em']}
           whiteSpace="pre"
           textAlign="center"
           fontWeight="bold"
@@ -45,7 +45,7 @@ const Bubble = ({ number, children, ...props }) => (
               top="50%"
               transform="translate(-60%, -40%)"
             >
-              <Text f={['1.2em', '2em', '2.5em']} textAlign="center">{number}</Text>
+              <Text f={['1.2em', '1.4em', '2em', '2.5em']} textAlign="center">{number}</Text>
             </Box>
           </BackgroundImage>
         </Box>

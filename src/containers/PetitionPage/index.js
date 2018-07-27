@@ -153,7 +153,7 @@ class PetitionPage extends PureComponent {
     return (
       <Box w={1} position="relative" overflow="hidden">
         <Logo />
-        <Container maxWidth={resultContainerWidth} px="1.5em" overflow={['hidden', 'visible']}>
+        <Container maxWidth={resultContainerWidth} px="1.5em" overflow={['hidden', null, 'visible']}>
           <Box position="relative" pt="100%" pb="30%">
             <Runway length="1000%" cleanTop={runnerTop} target={target}>
               <Runner
@@ -180,10 +180,10 @@ class PetitionPage extends PureComponent {
                         <Text>{getText('petition.letsClean')}</Text>
                       </object>
                     </Box>
-                    <Box w="100%" transform={['translateY(20%)', null, null, null, 'translateY(40%)']}>
+                    <Box w="100%" transform={['translateY(20%)', null, null, null, null, 'translateY(40%)']}>
                       <DoubleLayerButton
                         w={1 / 2}
-                        f={['1.2em', '2em']}
+                        f={['1.2em', null, '2em']}
                         py="0.5em"
                         onClick={this.handleOpen}
                       >
@@ -192,14 +192,14 @@ class PetitionPage extends PureComponent {
                     </Box>
                     {appear && (
                       <CircleWithArrow
-                        w={['12%', null, null, '15%']}
+                        w={['12%', null, null, null, '15%']}
                         minWidth="4.5em"
                         mx="auto"
                         mt="1em"
-                        transform={['translateY(20%)', 'translateY(40%)']}
+                        transform={['translateY(20%)', null, 'translateY(40%)']}
                         onClick={this.toEnding}
                       >
-                        <Text f={['1em', null, null, '1.5em']}>{getText('petition.ending')}</Text>
+                        <Text f={['1em', null, null, null, '1.5em']}>{getText('petition.ending')}</Text>
                       </CircleWithArrow>
                   )}
                     <PetitionCounter count={realCount} />
@@ -207,15 +207,15 @@ class PetitionPage extends PureComponent {
                 )}
               </Box>
               {appear && (
-                <Box position="absolute" bottom="0" w={1} transform={['translateY(270%)', null, null, 'translateY(250%)']}>
+                <Box position="absolute" bottom="0" w={1} transform={['translateY(270%)', null, null, null, 'translateY(250%)']}>
                   <CircleWithArrow
-                    w={['12%', null, null, '15%']}
+                    w={['12%', null, null, null, '15%']}
                     minWidth="5em"
                     mx="auto"
                     onClick={this.toPetition}
                     arrowType="up"
                   >
-                    <Text f={['1em', null, null, '1.5em']} whiteSpace="pre">{getText('petition.toPetition')}</Text>
+                    <Text f={['1em', null, null, null, '1.5em']} whiteSpace="pre">{getText('petition.toPetition')}</Text>
                   </CircleWithArrow>
                 </Box>
               )}

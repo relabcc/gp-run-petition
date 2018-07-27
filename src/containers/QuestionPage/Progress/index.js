@@ -46,7 +46,7 @@ const Progress = ({ browser, currentId, ...props }) => (
       >
         {index === currentId && (
           <Box
-            w={['2em', '3em']}
+            w={['2em', null, '3em']}
             transform={browser.greaterThan.md ? 'translate(-40%, -5%)' : 'translate(-30%, -5%)'}
           >
             <Head />

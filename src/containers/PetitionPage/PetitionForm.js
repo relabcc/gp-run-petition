@@ -88,7 +88,7 @@ const PetitionForm = ({
   <Border
     border="0.25em solid black"
     borderRadius="0.01em"
-    w={['20em', '25em']}
+    w={['20em', null, '25em']}
     py="1em"
     position="relative"
   >

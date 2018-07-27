@@ -35,26 +35,26 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <Box
             w="50%"
             position="absolute"
-            top={[null, null, '-18%', '-20%', '-25%']}
-            left={[null, null, '-22%', '-48%', '-42%']}
-            display={['none', null, 'block', 'block']}
+            top={[null, null, null, '-18%', '-20%', '-25%']}
+            left={[null, null, null, '-22%', '-48%', '-42%']}
+            display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudLeft} ratio={479.79 / 690.83} />
           </Box>
           <Box
             w="60%"
             position="absolute"
-            top={[null, null, '-16%', null, '-20%']}
-            right={[null, null, '-30%', '-56%', '-52%']}
-            display={['none', null, 'block', 'block']}
+            top={[null, null, null, '-16%', null, '-20%']}
+            right={[null, null, null, '-30%', '-56%', '-52%']}
+            display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudRight} ratio={528.27 / 853.02} />
           </Box>
           <Box
             position="absolute"
             bottom="0"
-            left={['-20%', '-6%', '-8%', '-5%']}
-            right={['-20%', '-6%', '-8%', '-5%']}
+            left={['-42%', null, '-6%', '-8%', '-5%']}
+            right={['-42%', null, '-6%', '-8%', '-5%']}
           >
             {this.props.browser.lessThan.md ? (
               <Box mx="auto">
@@ -67,10 +67,10 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
             )}
             <Box
               position="absolute"
-              bottom={['95%', null, '90%']}
+              bottom={['95%', null, null, '90%']}
               left="0"
               right="0"
-              px={['18%', null, null, null, '23%']}
+              px={['24%', null, null, null, null, '23%']}
             >
               <Box mx="auto">
                 <object data={titlebubble}>
@@ -81,16 +81,16 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           </Box>
           <Box
             position="absolute"
-            bottom={['0%', '2%', '4%']}
+            bottom={['0%', null, '2%', '4%']}
             left="0"
             right="0"
-            transform={['translateY(-18%)', 'translateY(-28%)', 'translateY(-5%)', 'translateY(10%)', 'translateY(-10%)']}
+            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-5%)', 'translateY(10%)', 'translateY(-10%)']}
           >
             <Box textAlign="center">
               <LinksButton
-                px={['5em', '6em']}
+                px={['5em', null, '6em']}
                 to="/quiz/question/1"
-                f={['1em', null, null, '1.2em']}
+                f={['1em', null, null, null, '1.2em']}
               >
                 {getText('petition.go')}
               </LinksButton>

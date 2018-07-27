@@ -9,6 +9,6 @@ import '../../web-font';
 
 export default (props) => (
   <ThemeProvider theme={theme}>
-    <Box f={[14, null, null, null, 16]} height="100%" {...props} />
+    <Box f={[12, 14, null, null, null, 16]} height="100%" {...props} />
   </ThemeProvider>
 );

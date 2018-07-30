@@ -30,31 +30,33 @@ import withResponsive from '../../hoc/withResponsive';
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <Box overflow="hidden" height="100%">
-        <Container position="relative" height="100%">
-          <Box
-            w={['50%', null, null, null, null, null, '70%']}
+      <Box overflow="hidden" height="100%" position="relative">
+        <Box
+            w={['50%', null, null, null,]}
             position="absolute"
-            top={[null, null, null, '-18%', '-20%', '-25%', '-26%']}
-            left={[null, null, null, '-22%', '-48%', '-42%', '-70%']}
+            top="0"
+            left="0"
+            transform={['translate(-30%, -60%)']}
             display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudLeft} ratio={479.79 / 690.83} />
           </Box>
           <Box
-            w={['50%', null, null, null, '60%', null, '80%']}
+            w={['50%', null, null, '50%']}
             position="absolute"
-            top={[null, null, null, '-16%', null, '-20%', '-25%']}
-            right={[null, null, null, '-30%', '-56%', '-52%', '-75%']}
+            top="0"
+            right="0"
+            transform={['translate(35%, -40%)']}
             display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudRight} ratio={528.27 / 853.02} />
-          </Box>
+        </Box>
+        <Container position="relative" height="100%">
           <Box
             position="absolute"
             bottom="0"
-            left={['-42%', null, '-6%', '-8%', '-3%', null, '-15%']}
-            right={['-42%', null, '-6%', '-8%', '-3%', null, '-15%']}
+            left={['-42%', null, '-6%', '-20%', '-8%', null, null, '-14%']}
+            right={['-42%', null, '-6%', '-20%', '-8%', null, null, '-14%']}
           >
             {this.props.browser.lessThan.md ? (
               <Box mx="auto">
@@ -67,7 +69,7 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
             )}
             <Box
               position="absolute"
-              bottom={['90%', null, null, '85%']}
+              bottom={['90%', null, null, null, '85%']}
               left="0"
               right="0"
               px={['24%', null, null, null, null, '22%']}
@@ -84,7 +86,7 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
             bottom={['0%', null, '2%', '4%']}
             left="0"
             right="0"
-            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-5%)', 'translateY(10%)', 'translateY(-10%)', 'translateY(-60%)']}
+            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-50%)', 'translateY(6%)', 'translateY(-10%)', 'translateY(-60%)']}
           >
             <Box textAlign="center">
               <LinksButton

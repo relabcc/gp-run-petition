@@ -12,7 +12,7 @@ import Text from '../../../components/Text';
 import withResponsive from '../../../hoc/withResponsive';
 import getText from '../../../text';
 
-import questions from '../questions';
+import questions from '../questions.json';
 
 const Progress = ({ browser, currentId, ...props }) => (
   <Box

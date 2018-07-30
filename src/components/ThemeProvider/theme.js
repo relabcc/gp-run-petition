@@ -3,7 +3,7 @@ import constants from 'styled-system/dist/constants';
 
 const emToPx = (em) => em * 16;
 
-export const breakpoints = [20.5, 30, 48, 62, 92, 105].map(emToPx);
+export const breakpoints = [20.5, 30, 48, 62, 92, 105, 120].map(emToPx);
 export const containerWidth = [48, 48, 48, 48, 48, 60, 75].map(emToPx);
 export const resultContainerWidth = [48, 48, 48, 48, 60, 60, 75].map(emToPx);
 export const petitionContainerWidth =  [36, 36, 40, 40, 40, 50].map(emToPx);

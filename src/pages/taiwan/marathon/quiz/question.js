@@ -1,1 +1,3 @@
-export { default } from '../../../quiz/question';
+import Page from '../../../../containers/QuestionPage';
+
+export default Page;

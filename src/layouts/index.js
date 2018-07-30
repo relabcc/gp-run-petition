@@ -21,7 +21,6 @@ const Layout = ({ children, data }) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <meta property="og:image" content={`https://www.greenpeace.org${withPrefix('/og_image.png')}`} />
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" />
     </Helmet>
     <ThemeProvider>
       {children()}

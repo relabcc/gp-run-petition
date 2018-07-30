@@ -16,16 +16,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `).then(result => {
       result.data.allQuestionsJson.edges.forEach(({ node }, index) => {
-        createPage({
-          path: `quiz/question/${index + 1}`,
-          component: path.resolve('./src/containers/QuestionPage/index.js'),
-          context: {
-            // Data passed to context is available in page queries as GraphQL variables.
-            id: index,
-            title: node.title,
-            options: node.options,
-          },
-        })
+        const bases = [
+          'quiz/question/',
+          'taiwan/zh/sites/2018/marathon/quiz/question/',
+          'taiwan/marathon/quiz/question/',
+        ];
+        bases.forEach((base) => {
+          createPage({
+            path: `${base}${index + 1}`,
+            component: path.resolve('./src/containers/QuestionPage/index.js'),
+            context: {
+              // Data passed to context is available in page queries as GraphQL variables.
+              id: index,
+              title: node.title,
+              options: node.options,
+            },
+          });
+        });
       });
       resolve();
     })

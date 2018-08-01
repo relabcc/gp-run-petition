@@ -72,7 +72,7 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
               bottom={['90%', null, null, null, '85%']}
               left="0"
               right="0"
-              px={['24%', null, null, null, null, '22%']}
+              px="24%"
             >
               <Box mx="auto">
                 <object data={titlebubble}>

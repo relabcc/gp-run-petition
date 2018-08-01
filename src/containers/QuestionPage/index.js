@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 
 import LinksButton from '../../components/LinksButton';
 import Flex from '../../components/Flex';
@@ -18,14 +17,8 @@ import pictures from './qpictures';
 import withReducer from './hoc';
 
 const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
-  // 如果沒有題目，導回首頁
-  if (!question) return <Redirect to="/" />;
-
-  const pageId = question.id + 1;
-  const qId = question.id;
-
-  // 判斷是不是最後一題
-  const isLast = pageId === pictures.length;
+  const pageId = question.id;
+  const qId = question.id - 1;
 
   return (
     <Box position="relative" height="100%" overflow={['hidden', null, 'visible']}>
@@ -39,13 +32,13 @@ const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
             <BackgroundImage w={1} src={pictures[qId]} ratio={540 / 1020} />
           </Box>
           <Flex justify="center" key={qId}>
-            {question.options.map((optText, optId) => (
+            {question.options && question.options.map((optText, optId) => (
               <Box key={optId} transform="translateY(-25%)">
                 <LinksButton
                   w={['12em', null, '15em']}
                   px={['0em', null, '1em']}
                   py="0.5em"
-                  to={isLast ? '/quiz/result' : `/quiz/question/${pageId + 1}`}
+                  to={question.isLast ? '/quiz/result' : `/quiz/question/${pageId + 1}`}
                   onClick={() => setAnswer(qId, optId)}
                   mx={['0.25em', null, '1em']}
                   active={answers[qId] === optId}

@@ -37,7 +37,7 @@ const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
                 <LinksButton
                   w={['12em', null, '15em']}
                   px={['0em', null, '1em']}
-                  py="0.5em"
+                  py="1em"
                   to={question.isLast ? '/quiz/result' : `/quiz/question/${pageId + 1}`}
                   onClick={() => setAnswer(qId, optId)}
                   mx={['0.25em', null, '1em']}

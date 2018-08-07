@@ -28,7 +28,7 @@ const Progress = ({ browser, currentId, ...props }) => (
     {...props}
   >
     <Border
-      border="2px solid"
+      border="3px solid"
       bg="white"
       px="0.5em"
       mb={browser.greaterThan.md ? '1.5em' : ''}

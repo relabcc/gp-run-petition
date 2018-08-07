@@ -4,6 +4,7 @@ const {
   finish,
   person,
   target,
+  done,
 } = require('../text/petition');
 const fontMin = require('./fontMin');
 
@@ -13,7 +14,8 @@ const sourceText = {
     finish,
     person,
     target,
-    ...range(0, 10),
+    done,
+    ...range(10),
     ',',
   ],
 };

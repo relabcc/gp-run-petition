@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Box from '../../components/Box';
 
 import finish from './finish.svg';
-import Destop from './Destop';
+import Desktop from './Desktop';
 import Mobile from './Mobile';
 
 import withResponsive from '../../hoc/withResponsive';
@@ -16,7 +16,7 @@ const ResultPage = ({ browser }) => (
     {browser.lessThan.md ? (
       <Mobile />
     ) : (
-      <Destop />
+      <Desktop />
     )}
   </Box>
   );

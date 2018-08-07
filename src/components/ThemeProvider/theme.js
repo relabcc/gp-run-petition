@@ -9,6 +9,7 @@ export const resultContainerWidth = [48, 48, 48, 48, 60, 60, 75].map(emToPx);
 export const petitionContainerWidth =  [36, 36, 40, 40, 40, 50].map(emToPx);
 
 const font = 'Arial, "PingFang TC", "HeiTi TC", "Microsoft JhengHei", sans-serif';
+const tetsuBin = 'TetsuBin Gothic';
 
 const white = '#fff';
 const black = '#000';
@@ -38,5 +39,6 @@ export default merge(constants, {
   breakpoints,
   containerWidth,
   font,
+  tetsuBin,
   duration: 250,
 });

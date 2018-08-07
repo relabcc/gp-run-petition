@@ -47,13 +47,13 @@ const Destop = () => (
     <Box position="absolute" top="0" left="0" bottom="0" right="0" overflow="hidden">
       <CloudLR
         w="40%"
-        top="43%"
-        left="-20%"
+        top="42%"
+        left="-19%"
       />
       <CloudLR
-        w="40%"
-        bottom="19%"
-        right="-23%"
+        w="45%"
+        bottom="20%"
+        right="-25%"
       />
       <CloudUD
         w="50%"
@@ -62,11 +62,11 @@ const Destop = () => (
       />
       <CloudUD
         w="40%"
-        top="32%"
+        top="30%"
         right="-17%"
       />
     </Box>
-    <ResultContainer position="relative" zIndex={5} mt="-15%">
+    <ResultContainer position="relative" zIndex={5}>
       {ups.map((up, index) => (
         <Box textAlign="center" pb="1em" key={index}>
           <Border
@@ -76,8 +76,9 @@ const Destop = () => (
             f="1.5em"
             my="1.5em"
             bg="white"
-            border="4px solid"
+            border="5px solid"
             display="inline-block"
+            fontWeight="700"
           >
             {up.text}
           </Border>
@@ -96,10 +97,12 @@ const Destop = () => (
               w="30em"
               f="1.5em"
               p="1em"
-              my="1.5em"
+              mt={index > 0 ? '6em' : '1.5em'}
+              mb="1.5em"
               bg={index > 0 ? 'orange' : 'white'}
-              border="4px solid"
+              border="5px solid"
               display="inline-block"
+              fontWeight="700"
             >
               <Text whiteSpace="pre">
                 {down.text}

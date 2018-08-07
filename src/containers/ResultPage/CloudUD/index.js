@@ -6,7 +6,7 @@ import Box from '../../../components/Box';
 import cloud from './cloudUD.svg';
 
 const cloudUD = (props) => (
-  <Box position="absolute" {...props}>
+  <Box position="absolute" zIndex={6} {...props}>
     <BackgroundImage src={cloud} ratio={583 / 870} />
   </Box>
 );

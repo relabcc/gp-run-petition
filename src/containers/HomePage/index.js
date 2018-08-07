@@ -32,21 +32,21 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
     return (
       <Box overflow="hidden" height="100%" position="relative">
         <Box
-            w={['50%', null, null, null,]}
+            w="35%"
             position="absolute"
             top="0"
             left="0"
-            transform={['translate(-30%, -60%)']}
+            transform={['translate(-25%, -55%)']}
             display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudLeft} ratio={479.79 / 690.83} />
           </Box>
           <Box
-            w={['50%', null, null, '50%']}
+            w="40%"
             position="absolute"
             top="0"
             right="0"
-            transform={['translate(35%, -40%)']}
+            transform={['translate(36%, -43%)']}
             display={['none', null, null, 'block', 'block']}
           >
             <BackgroundImage src={cloudRight} ratio={528.27 / 853.02} />
@@ -55,8 +55,8 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <Box
             position="absolute"
             bottom="0"
-            left={['-42%', null, '-6%', '-20%', '-8%', null, null, '-14%']}
-            right={['-42%', null, '-6%', '-20%', '-8%', null, null, '-14%']}
+            left={['-42%', null, '-7%', '-28%', '-8%', '-5%', '-18%', '-40%']}
+            right={['-42%', null, '-7%', '-28%', '-8%', '-5%', '-18%', '-40%']}
           >
             {this.props.browser.lessThan.md ? (
               <Box mx="auto">
@@ -86,13 +86,13 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
             bottom={['0%', null, '2%', '4%']}
             left="0"
             right="0"
-            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-50%)', 'translateY(6%)', 'translateY(-10%)', 'translateY(-60%)']}
+            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-100%)', 'translateY(6%)', 'translateY(-10%)', 'translateY(-60%)']}
           >
             <Box textAlign="center">
               <LinksButton
                 px={['5em', null, '6em']}
                 to="/quiz/question/1"
-                f={['1em', null, null, null, '1.2em']}
+                f={['1em', null, null, null, '1.2em', null, null, '2em']}
               >
                 {getText('petition.go')}
               </LinksButton>

@@ -34,7 +34,7 @@ const Input = ({
 }) => (
   <Flex is="label" {...props}>
     <Box mr="1em" w={labelWidth}>
-      <Text fontWeight="bold" align="right">{label}</Text>
+      <Text fontWeight="bold">{label}</Text>
     </Box>
     <Box flex="1">
       {createElement(TextInput, {

@@ -22,6 +22,7 @@ import IconButton from '../../components/IconButton';
 import Input from '../../components/Input';
 import Link from '../../components/Link';
 import Text from '../../components/Text';
+import Checkbox from '../../components/Checkbox';
 
 import getText from '../../text';
 
@@ -61,7 +62,7 @@ const LinksButton = ({ children, ...props }) => (
     display="block"
     color="black"
     hoverBg="teal"
-    w={1}
+    w={[1, null, null, '15em']}
     m="0.5em"
     is={CleanLink}
     {...props}
@@ -130,10 +131,15 @@ const PetitionForm = ({
                   error={touched[key] && errors[key]}
                 />
               ))}
-              <Box is="label" my="1em" textAlign="left">
-                <input type="checkbox" name="emailOkTaiwan" onChange={handleChange} checked={values.emailOkTaiwan} />
-                <Box is="span" display="inline" ml="0.5em">我要即時收到最新專案訊息，知道更多參與和協助的方法。</Box>
-              </Box>
+              <Checkbox
+                f="0.9em"
+                my="1em"
+                name="emailOkTaiwan"
+                onChange={handleChange}
+                checked={values.emailOkTaiwan}
+              >
+                我要即時收到最新專案訊息，知道更多參與和協助的方法。
+              </Checkbox>
               <Text f="0.8em" mt="0.5em">
                 （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
               </Text>
@@ -152,7 +158,7 @@ const PetitionForm = ({
               {getText('petition.submit')}
             </DoubleLayerButton>
           ) : (
-            <Flex>
+            <Flex flexDirection={['row', null, null, 'column']} align="center">
               <LinksButton
                 icon={<Money />}
                 href="https://act.greenpeace.org/page/4723/donate/1?ref=marathon_thankyou_page"

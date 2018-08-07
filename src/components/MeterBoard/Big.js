@@ -12,7 +12,7 @@ const images = {
 };
 
 const Big = ({ distance, children, ...props }) => (
-  <Box position="absolute" w="33%" {...props}>
+  <Box position="absolute" w="40%" {...props}>
     <BackgroundImage position="absolute" src={get(images, distance)} ratio={550 / 330}>
      {children}
     </BackgroundImage>

@@ -164,13 +164,13 @@ class Runway extends PureComponent {
           {take(bushRight, bushCount).map(this.renderBush)}
         </BushesContainer>
         <BigFlag top="0" src={start} transform="translateY(-90%)" />
-        <B1 top="25%" left="0" transform="translate(-40%, -100%)">
+        <B1 top="25%" left="0" transform="translate(-40%, -90%)">
           {target * 1 / 4}
         </B1>
-        <B2 top="50%" right="0" transform="translate(40%, -100%)">
+        <B2 top="50%" right="0" transform="translate(40%, -90%)">
           {target * 1 / 2}
         </B2>
-        <B3 top="75%" left="0" transform="translate(-40%, -100%)">
+        <B3 top="75%" left="0" transform="translate(-40%, -90%)">
           {target * 3 / 4}
         </B3>
         <BoardBig top="75%" right="0" distance={[15, 1]} transform="translate(40%, -100%)" />

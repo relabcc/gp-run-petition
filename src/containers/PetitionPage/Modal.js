@@ -33,6 +33,10 @@ export default class Modal extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    console.log('unmount');
+  }
+
   freeze = () => {
     this.scrollY = scroll.getScrollY();
     setTimeout(() => {
@@ -49,8 +53,10 @@ export default class Modal extends PureComponent {
     });
   }
 
-  handleRef = ({ node }) => {
-    this.modalEle = node;
+  handleRef = (ref) => {
+    if (ref) {
+      this.modalEle = ref.node;
+    }
   }
 
   render() {

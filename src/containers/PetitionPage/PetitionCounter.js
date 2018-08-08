@@ -32,7 +32,7 @@ const PetitionCounter = ({ browser, count, ...props }) => browser.greaterThan.md
       <Border border="2px solid" />
     </Box>
     <DoubleLayerBox p="0.75em">
-      <Text>{getText('petition.current')}</Text>
+      <Text fontWeight="700">{getText('petition.current')}</Text>
       <Flex align="flex-end" justify="center">
         <Text.tetsuBin color="red" f="2.5em">{format(count)}</Text.tetsuBin>
         <Text.tetsuBin pb="0.6em" color="black">{getText('petition.person')}</Text.tetsuBin>

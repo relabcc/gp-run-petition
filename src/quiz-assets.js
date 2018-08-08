@@ -26,6 +26,6 @@ export default [
   require('./containers/ResultPage/Mobile/garbage.svg'),
   require('./containers/ResultPage/Mobile/injury.svg'),
   require('./containers/ResultPage/Mobile/smallquestion.svg'),
-  require('./containers/ResultPage/Mobile/trash.svg'),
+  require('./containers/ResultPage/Mobile/warmup.svg'),
   require('./containers/ResultPage/Mobile/whatshouldwedo.svg')
 ];

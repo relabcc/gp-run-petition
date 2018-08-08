@@ -9,13 +9,13 @@ import LinksButton from '../../../components/LinksButton';
 
 import smallquestion from './smallquestion.svg';
 import garbage from './garbage.svg';
-import trash from './trash.svg';
+import warmup from './warmup.svg';
 import injury from './injury.svg';
 import whatshouldwedo from './whatshouldwedo.svg';
 
 const ups = [
   {
-    img: trash,
+    img: warmup,
     text: '開跑前，要注意自己的身體',
   },
   {
@@ -37,7 +37,7 @@ const downs = [
 
 const Mobile = () => (
   <Box w="100%">
-    <Box mt="-15%">
+    <Box>
       {ups.map((up, index) => (
         <Box textAlign="center" pb="1em" key={index}>
           <Border

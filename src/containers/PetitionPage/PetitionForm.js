@@ -26,6 +26,7 @@ import Input from '../../components/Input';
 import Link from '../../components/Link';
 import Text from '../../components/Text';
 import Checkbox from '../../components/Checkbox';
+import withResponsive from '../../hoc/withResponsive';
 
 import getText from '../../text';
 
@@ -101,7 +102,7 @@ class PetitionForm extends PureComponent {
       <Border
         border="0.25em solid black"
         borderRadius="0.01em"
-        w={['20em', null, '25em']}
+        w={['18em', '20em', null, '40em', '50em']}
         py="1em"
         position="relative"
       >
@@ -113,7 +114,7 @@ class PetitionForm extends PureComponent {
             border="0.25em solid black"
           ><Close /></Button>
         </Box>
-        <Scrollbars style={{ height: Math.min(window.innerHeight * 0.66, bounds.height) || '66vh' }}>
+        <Scrollbars style={{ height: Math.min(window.innerHeight * 0.7, bounds.height) || '70vh' }}>
           <Box innerRef={measureRef} textAlign="center" w={1} overflow="hidden">
             {submitted ? (
               <Box px="10%" py="1em">
@@ -123,16 +124,21 @@ class PetitionForm extends PureComponent {
               </Box>
             ) : (
               <Box px="1em">
-                <Box py="0.5em" fontWeight="bold" f="1.25em">{getText('petition.title')}</Box>
-                <Box pb="1.5em">{getText('petition.sub')}</Box>
-                <object data={formHead}>
-                  {getText('petition.hope')}
-                </object>
-                <Box mt="1em" mb="3em" textAlign="left">
+                <Box py="0.5em" fontWeight="bold" f="1.5em">{getText('petition.title')}</Box>
+                <Box pb="1.5em" fontWeight="700">{getText('petition.sub')}</Box>
+                <Box px={[null, null, null, '25%']}>
+                  <object data={formHead}>
+                    {getText('petition.hope')}
+                  </object>
+                </Box>
+                <Box mt="1em" mb="2em" textAlign="left">
+                  <Flex flexWrap="wrap" px={[null, null, null, "8%"]}>
                   {fields.map((key) => (
                     <Input
+                      w={[1, null, null, 1 / 2]}
                       key={key}
-                      my="1em"
+                      my="0.5em"
+                      px={[null, null, null, "0.5em"]}
                       name={key}
                       labelWidth="4.5em"
                       placeholder={getText(`placeholder.${key}`)}
@@ -143,25 +149,29 @@ class PetitionForm extends PureComponent {
                       error={touched[key] && errors[key]}
                     />
                   ))}
-                  <Checkbox
-                    f="0.9em"
-                    my="1em"
-                    name="emailOkTaiwan"
-                    onChange={handleChange}
-                    checked={values.emailOkTaiwan}
-                  >
-                    我要即時收到最新專案訊息，知道更多參與和協助的方法。
-                  </Checkbox>
-                  <Text f="0.8em">
-                    （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
-                  </Text>
+                  </Flex>
+                  <Box px={[null, null, null, "8%"]}>
+                    <Checkbox
+                      f="0.9em"
+                      my="1em"
+                      mx="0.5rem"
+                      name="emailOkTaiwan"
+                      onChange={handleChange}
+                      checked={values.emailOkTaiwan}
+                    >
+                      我要即時收到最新專案訊息，知道更多參與和協助的方法。
+                    </Checkbox>
+                    <Text f="0.8em">
+                      （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
+                    </Text>
+                  </Box>
                 </Box>
               </Box>
             )}
             <Box position="relative">
               {!submitted ? (
                 <DoubleLayerButton
-                  w={3 / 5}
+                  w={[1 / 2, null, null, 1 / 4]}
                   hoverBg="teal"
                   onClick={(e) => submitted ? onRequestClose(e) : handleSubmit(e)}
                   disabled={isSubmitting}
@@ -185,20 +195,20 @@ class PetitionForm extends PureComponent {
                   </LinksButton>
                 </Flex>
               )}
-              {!submitted && (
-                <Box
-                  position="absolute"
-                  right="-15%"
-                  bottom="0"
-                  transform="translateY(-50%)"
-                  w="30%"
-                >
-                  <BackgroundImage src={pencil} ratio={182 / 190} />
-                </Box>
-              )}
             </Box>
           </Box>
         </Scrollbars>
+        {!submitted && !this.props.browser.lessThan.sm &&(
+          <Box
+            position="absolute"
+            right="-10%"
+            bottom="0"
+            transform="translateY(-50%)"
+            w="20%"
+          >
+            <BackgroundImage src={pencil} ratio={182 / 190} />
+          </Box>
+        )}
       </Border>
     );
   }
@@ -238,7 +248,7 @@ const formikConfig = {
   },
 };
 
-export default compose(
+export default withResponsive(compose(
   withFormik(formikConfig),
   withContentRect('bounds')
-)(PetitionForm);
+)(PetitionForm));

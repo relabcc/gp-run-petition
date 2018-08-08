@@ -29,6 +29,7 @@
     "lodash": "^4.17.10",
     "open-color": "^1.6.3",
     "query-string": "5",
+    "react-custom-scrollbars": "^4.2.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-lifecycles-compat": "^3.0.4",

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
 import { withFormik } from 'formik';
 import {
   object,
@@ -11,6 +12,8 @@ import set from 'lodash/set';
 import Money from 'react-icons/lib/io/social-usd';
 import FB from 'react-icons/lib/io/social-facebook';
 import Close from 'react-icons/lib/fa/close';
+import { Scrollbars } from 'react-custom-scrollbars';
+import { withContentRect } from 'react-measure';
 
 import Button from '../../components/Button';
 import Flex from '../../components/Flex';
@@ -75,120 +78,131 @@ LinksButton.propTypes = {
   children: PropTypes.node,
 };
 
-const PetitionForm = ({
-  values,
-  errors,
-  touched,
-  handleChange,
-  handleBlur,
-  handleSubmit,
-  isSubmitting,
-  submitted,
-  onRequestClose,
-}) => (
-  <Border
-    border="0.25em solid black"
-    borderRadius="0.01em"
-    w={['20em', null, '25em']}
-    py="1em"
-    position="relative"
-  >
-    <Box position="absolute" top="0" right="-0.25em" transform="translateY(-125%)">
-      <Button
-        px="0.5em"
-        py="0.5em"
-        onClick={onRequestClose}
+class PetitionForm extends PureComponent {
+  componentDidMount() {
+    this.props.measure();
+  }
+
+  render() {
+    const {
+      values,
+      errors,
+      touched,
+      handleChange,
+      handleBlur,
+      handleSubmit,
+      isSubmitting,
+      submitted,
+      onRequestClose,
+      measureRef,
+      contentRect: { bounds }
+    } = this.props;
+    return (
+      <Border
         border="0.25em solid black"
-      ><Close /></Button>
-    </Box>
-    <Box maxHeight="66vh" overflowX="hidden" overflowY="auto" px="1em">
-      <Box textAlign="center">
-        {submitted ? (
-          <Box px="10%" py="1em">
-            <object data={thanks}>
-              {getText('petition.thanks')}
-            </object>
-          </Box>
-        ) : (
-          <Box px="1em">
-            <Box py="0.5em" fontWeight="bold" f="1.25em">{getText('petition.title')}</Box>
-            <Box pb="1.5em">{getText('petition.sub')}</Box>
-            <object data={formHead}>
-              {getText('petition.hope')}
-            </object>
-            <Box mt="1em" mb="3em" textAlign="left">
-              {fields.map((key) => (
-                <Input
-                  key={key}
-                  my="1em"
-                  name={key}
-                  labelWidth="4.5em"
-                  placeholder={getText(`placeholder.${key}`)}
-                  label={getText(`petition.${key}`)}
-                  value={values[key]}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched[key] && errors[key]}
-                />
-              ))}
-              <Checkbox
-                f="0.9em"
-                my="1em"
-                name="emailOkTaiwan"
-                onChange={handleChange}
-                checked={values.emailOkTaiwan}
-              >
-                我要即時收到最新專案訊息，知道更多參與和協助的方法。
-              </Checkbox>
-              <Text f="0.8em" mt="0.5em">
-                （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
-              </Text>
-            </Box>
-          </Box>
-        )}
-        <Box position="relative">
-          {!submitted ? (
-            <DoubleLayerButton
-              w={3 / 5}
-              hoverBg="teal"
-              onClick={(e) => submitted ? onRequestClose(e) : handleSubmit(e)}
-              disabled={isSubmitting}
-              mb="1em"
-            >
-              {getText('petition.submit')}
-            </DoubleLayerButton>
-          ) : (
-            <Flex flexDirection={['row', null, null, 'column']} align="center">
-              <LinksButton
-                icon={<Money />}
-                href="https://act.greenpeace.org/page/4723/donate/1?ref=marathon_thankyou_page"
-              >
-                {getText('petition.donate')}
-              </LinksButton>
-              <LinksButton
-                icon={<FB />}
-                href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fact.gp/2JlrNWw"
-              >
-                {getText('petition.FB')}
-              </LinksButton>
-            </Flex>
-          )}
-          {!submitted && (
-            <Box
-              position="absolute"
-              right="-15%"
-              bottom="0"
-              transform="translateY(-50%)"
-              w="30%"
-            >
-              <BackgroundImage src={pencil} ratio={182 / 190} />
-            </Box>
-          )}
+        borderRadius="0.01em"
+        w={['20em', null, '25em']}
+        py="1em"
+        position="relative"
+      >
+        <Box position="absolute" top="0" right="-0.25em" transform="translateY(-125%)">
+          <Button
+            px="0.5em"
+            py="0.5em"
+            onClick={onRequestClose}
+            border="0.25em solid black"
+          ><Close /></Button>
         </Box>
-      </Box>
-    </Box>
-  </Border>
-);
+        <Scrollbars style={{ height: Math.min(window.innerHeight * 0.66, bounds.height) || '66vh' }}>
+          <Box innerRef={measureRef} textAlign="center" w={1} overflow="hidden">
+            {submitted ? (
+              <Box px="10%" py="1em">
+                <object data={thanks}>
+                  {getText('petition.thanks')}
+                </object>
+              </Box>
+            ) : (
+              <Box px="1em">
+                <Box py="0.5em" fontWeight="bold" f="1.25em">{getText('petition.title')}</Box>
+                <Box pb="1.5em">{getText('petition.sub')}</Box>
+                <object data={formHead}>
+                  {getText('petition.hope')}
+                </object>
+                <Box mt="1em" mb="3em" textAlign="left">
+                  {fields.map((key) => (
+                    <Input
+                      key={key}
+                      my="1em"
+                      name={key}
+                      labelWidth="4.5em"
+                      placeholder={getText(`placeholder.${key}`)}
+                      label={getText(`petition.${key}`)}
+                      value={values[key]}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched[key] && errors[key]}
+                    />
+                  ))}
+                  <Checkbox
+                    f="0.9em"
+                    my="1em"
+                    name="emailOkTaiwan"
+                    onChange={handleChange}
+                    checked={values.emailOkTaiwan}
+                  >
+                    我要即時收到最新專案訊息，知道更多參與和協助的方法。
+                  </Checkbox>
+                  <Text f="0.8em">
+                    （綠色和平尊重並保障您的個人隱私資料，您隨時可取消訂閱，請參考<Link target="_blank" href="https://www.greenpeace.org/taiwan/zh/aboutus/privacy/">隱私保護政策</Link>。）
+                  </Text>
+                </Box>
+              </Box>
+            )}
+            <Box position="relative">
+              {!submitted ? (
+                <DoubleLayerButton
+                  w={3 / 5}
+                  hoverBg="teal"
+                  onClick={(e) => submitted ? onRequestClose(e) : handleSubmit(e)}
+                  disabled={isSubmitting}
+                  mb="1em"
+                >
+                  {getText('petition.submit')}
+                </DoubleLayerButton>
+              ) : (
+                <Flex flexDirection={['row', null, null, 'column']} align="center">
+                  <LinksButton
+                    icon={<Money />}
+                    href="https://act.greenpeace.org/page/4723/donate/1?ref=marathon_thankyou_page"
+                  >
+                    {getText('petition.donate')}
+                  </LinksButton>
+                  <LinksButton
+                    icon={<FB />}
+                    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fact.gp/2JlrNWw"
+                  >
+                    {getText('petition.FB')}
+                  </LinksButton>
+                </Flex>
+              )}
+              {!submitted && (
+                <Box
+                  position="absolute"
+                  right="-15%"
+                  bottom="0"
+                  transform="translateY(-50%)"
+                  w="30%"
+                >
+                  <BackgroundImage src={pencil} ratio={182 / 190} />
+                </Box>
+              )}
+            </Box>
+          </Box>
+        </Scrollbars>
+      </Border>
+    );
+  }
+}
 
 PetitionForm.propTypes = {
   values: PropTypes.object,
@@ -224,4 +238,7 @@ const formikConfig = {
   },
 };
 
-export default withFormik(formikConfig)(PetitionForm);
+export default compose(
+  withFormik(formikConfig),
+  withContentRect('bounds')
+)(PetitionForm);

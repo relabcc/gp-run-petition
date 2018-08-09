@@ -117,7 +117,7 @@ class PetitionForm extends PureComponent {
         <Scrollbars style={{ height: Math.min(window.innerHeight * 0.7, bounds.height) || '70vh' }}>
           <Box innerRef={measureRef} textAlign="center" w={1} overflow="hidden">
             {submitted ? (
-              <Box px={['10%', null, null, '30%']} py="1em">
+              <Box px={['10%', null, null, '30%']} pt="2em" pb="1em">
                 <object data={thanks}>
                   {getText('petition.thanks')}
                 </object>
@@ -180,7 +180,7 @@ class PetitionForm extends PureComponent {
                   {getText('petition.submit')}
                 </DoubleLayerButton>
               ) : (
-                <Flex flexDirection={['row', null, null, 'column']} align="center">
+                <Flex flexDirection={['row', null, null, 'column']} align="center" pb="2em">
                   <LinksButton
                     icon={<Money />}
                     href="https://act.greenpeace.org/page/4723/donate/1?ref=marathon_thankyou_page"

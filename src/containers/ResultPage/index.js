@@ -11,8 +11,10 @@ import withResponsive from '../../hoc/withResponsive';
 
 const ResultPage = ({ browser }) => (
   <Box>
-    <object data={finish}>
-    </object>
+    <Box maxWidth="105em" mx="auto">
+      <object data={finish}>
+      </object>
+    </Box>
     {browser.lessThan.md ? (
       <Mobile />
     ) : (

@@ -55,8 +55,8 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <Box
             position="absolute"
             bottom="0"
-            left={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-28%']}
-            right={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-28%']}
+            left={['-42%', null, '-7%', '-28%', '-8%', '-5%', '-2%', '-28%']}
+            right={['-42%', null, '-7%', '-28%', '-8%', '-5%', '-2%', '-28%']}
           >
             {this.props.browser.lessThan.md ? (
               <Box mx="auto">

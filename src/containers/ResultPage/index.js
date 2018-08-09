@@ -10,8 +10,8 @@ import Mobile from './Mobile';
 import withResponsive from '../../hoc/withResponsive';
 
 const ResultPage = ({ browser }) => (
-  <Box>
-    <Box maxWidth="105em" mx="auto">
+  <Box overflow={['hidden', null, null, 'none']}>
+    <Box maxWidth="105em" mx={['-18%', null, null, 'auto']}>
       <object data={finish}>
       </object>
     </Box>

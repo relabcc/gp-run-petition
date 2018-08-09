@@ -180,7 +180,7 @@ class PetitionForm extends PureComponent {
                   {getText('petition.submit')}
                 </DoubleLayerButton>
               ) : (
-                <Flex flexDirection={['row', null, null, 'column']} align="center" pb="2em">
+                <Flex flexDirection={['row', null, null, 'column']} align="center" pb="2em" mx={['0.5em', '1em']}>
                   <LinksButton
                     icon={<Money />}
                     href="https://act.greenpeace.org/page/4723/donate/1?ref=marathon_thankyou_page"

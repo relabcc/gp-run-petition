@@ -72,7 +72,7 @@ const Mobile = () => (
               border="2px solid"
               display="inline-block"
             >
-              <Text>{down.text}</Text>
+              <Text fontWeight="bold">{down.text}</Text>
             </Border>
             <object data={down.img}>
             </object>

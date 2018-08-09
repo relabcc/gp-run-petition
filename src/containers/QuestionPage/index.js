@@ -28,7 +28,7 @@ const QuestionPage = ({ pathContext: question , setAnswer, answers }) => {
           <Bubble number={pageId}>
             {question.title}
           </Bubble>
-          <Box px={[null, null, '17%', null, null, null, null, '2%']} mx={['-5%', '-8%', '0%']}>
+          <Box px={[null, null, '17%', null, null, null, null, '5%']} mx={['-5%', '-8%', '0%']}>
             <BackgroundImage w={1} src={pictures[qId]} ratio={540 / 1020} />
           </Box>
           <Flex justify="center" key={qId}>

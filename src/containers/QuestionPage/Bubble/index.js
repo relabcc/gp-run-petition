@@ -12,7 +12,7 @@ const Bubble = ({ number, children, ...props }) => (
   <Box
     position="relative"
     pt={['5em', null, '6em', null, null, '3.5em']}
-    mx={[null, null, '8%', '13%', '11%', '18%', '20%']}
+    mx={[null, null, '8%', '13%', '11%', '18%', '20%', '12%']}
     {...props}
   >
     <BackgroundImage position="absolute" src={bubble} ratio={240 / 686}>
@@ -23,7 +23,7 @@ const Bubble = ({ number, children, ...props }) => (
         transform="translate(-50%, -50%)"
       >
         <Text
-          f={['1.1em', '1em', null, '1.5em']}
+          f={['1.1em', '1em', null, '1.5em', null, null, '2em']}
           whiteSpace="pre"
           textAlign="center"
           fontWeight="bold"

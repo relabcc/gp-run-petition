@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-taiwan-marathon-quiz-result-js": [
-      "component---src-pages-taiwan-marathon-quiz-result-js-2f0f81f9c4a919542d23.js",
-      "component---src-pages-taiwan-marathon-quiz-result-js-2f0f81f9c4a919542d23.js.map"
+      "component---src-pages-taiwan-marathon-quiz-result-js-6b9b614f1899f0aab7f0.js",
+      "component---src-pages-taiwan-marathon-quiz-result-js-6b9b614f1899f0aab7f0.js.map"
     ],
     "path---taiwan-zh-sites-2018-marathon-quiz-question-6": [
       "path---taiwan-zh-sites-2018-marathon-quiz-question-6-03e26467925fa6862ede.js",
@@ -25,8 +25,8 @@
       "path---taiwan-zh-sites-2018-marathon-quiz-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-8c3c000e8c35576e93a2.js",
-      "component---src-pages-index-js-8c3c000e8c35576e93a2.js.map"
+      "component---src-pages-index-js-b48c416a40329c68bb13.js",
+      "component---src-pages-index-js-b48c416a40329c68bb13.js.map"
     ],
     "component---src-containers-question-page-index-js": [
       "component---src-containers-question-page-index-js-a36067d6c68be43b7f3a.js",
@@ -81,8 +81,8 @@
       "path---taiwan-zh-sites-2018-marathon-quiz-question-5-60d02e2d025c48caf68c.js.map"
     ],
     "component---src-pages-taiwan-zh-sites-2018-marathon-index-js": [
-      "component---src-pages-taiwan-zh-sites-2018-marathon-index-js-f4d765d88abb9d03dc8e.js",
-      "component---src-pages-taiwan-zh-sites-2018-marathon-index-js-f4d765d88abb9d03dc8e.js.map"
+      "component---src-pages-taiwan-zh-sites-2018-marathon-index-js-2c8d0d97f156cdd279a6.js",
+      "component---src-pages-taiwan-zh-sites-2018-marathon-index-js-2c8d0d97f156cdd279a6.js.map"
     ],
     "path---taiwan-marathon-quiz-question-4": [
       "path---taiwan-marathon-quiz-question-4-32a528c527e2a6b53ccb.js",
@@ -117,8 +117,8 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-taiwan-marathon-index-js": [
-      "component---src-pages-taiwan-marathon-index-js-d714ab8725058e8105f3.js",
-      "component---src-pages-taiwan-marathon-index-js-d714ab8725058e8105f3.js.map"
+      "component---src-pages-taiwan-marathon-index-js-07856549ddef9147b2e1.js",
+      "component---src-pages-taiwan-marathon-index-js-07856549ddef9147b2e1.js.map"
     ],
     "path---taiwan-zh-sites-2018-marathon-quiz-question-1": [
       "path---taiwan-zh-sites-2018-marathon-quiz-question-1-ac4064e461942569e004.js",
@@ -159,8 +159,8 @@
       "path---quiz-question-2-982716caff9e2af41c74.js.map"
     ],
     "component---src-pages-taiwan-zh-sites-2018-marathon-quiz-result-js": [
-      "component---src-pages-taiwan-zh-sites-2018-marathon-quiz-result-js-e9bec541005f21ebbad6.js",
-      "component---src-pages-taiwan-zh-sites-2018-marathon-quiz-result-js-e9bec541005f21ebbad6.js.map"
+      "component---src-pages-taiwan-zh-sites-2018-marathon-quiz-result-js-c8fb7b71994f5a743634.js",
+      "component---src-pages-taiwan-zh-sites-2018-marathon-quiz-result-js-c8fb7b71994f5a743634.js.map"
     ],
     "path---taiwan-zh-sites-2018-marathon": [
       "path---taiwan-zh-sites-2018-marathon-a0e39f21c11f6a62c5ab.js",
@@ -175,8 +175,8 @@
       "path---quiz-question-4-32a528c527e2a6b53ccb.js.map"
     ],
     "component---src-pages-quiz-result-js": [
-      "component---src-pages-quiz-result-js-fda470d496d1f8285bd0.js",
-      "component---src-pages-quiz-result-js-fda470d496d1f8285bd0.js.map"
+      "component---src-pages-quiz-result-js-ac8c71f5a4ddbd8f772d.js",
+      "component---src-pages-quiz-result-js-ac8c71f5a4ddbd8f772d.js.map"
     ]
   }
 }

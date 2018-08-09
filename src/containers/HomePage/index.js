@@ -55,8 +55,8 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <Box
             position="absolute"
             bottom="0"
-            left={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-33%']}
-            right={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-33%']}
+            left={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-28%']}
+            right={['-42%', null, '-7%', '-28%', '-8%', '-5%', null, '-28%']}
           >
             {this.props.browser.lessThan.md ? (
               <Box mx="auto">
@@ -86,7 +86,7 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
             bottom={['0%', null, '2%', '4%']}
             left="0"
             right="0"
-            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-100%)', 'translateY(6%)', 'translateY(-10%)', 'translateY(-50%)']}
+            transform={['translateY(-50%)', null, 'translateY(-28%)', 'translateY(-100%)', 'translateY(6%)', 'translateY(-10%)', 'translateY(-40%)']}
           >
             <Box textAlign="center">
               <LinksButton

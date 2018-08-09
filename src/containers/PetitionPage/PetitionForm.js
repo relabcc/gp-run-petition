@@ -117,7 +117,7 @@ class PetitionForm extends PureComponent {
         <Scrollbars style={{ height: Math.min(window.innerHeight * 0.7, bounds.height) || '70vh' }}>
           <Box innerRef={measureRef} textAlign="center" w={1} overflow="hidden">
             {submitted ? (
-              <Box px="10%" py="1em">
+              <Box px={['10%', null, null, '30%']} py="1em">
                 <object data={thanks}>
                   {getText('petition.thanks')}
                 </object>

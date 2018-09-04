@@ -65,12 +65,13 @@ function Checkbox({
   name,
   error,
   onChange,
+  checked,
   ...props
 }) {
   return (
     <LabelBox is="label" align="flex-start" {...props}>
       <Box>
-        <Input onChange={onChange} name={name} />
+        <Input onChange={onChange} name={name} checked={checked} />
         <span className="checkmark" />
       </Box>
       <Box flex="1">

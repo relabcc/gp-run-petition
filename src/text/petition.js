@@ -11,7 +11,7 @@ module.exports = {
   title: '無拘無塑來跑步',
   sub: '當路跑活動的風潮日益成熟，你想像過最理想的路跑環境，應該具備什麼條件？',
   hope: '我希望未來能擁有更好的路跑環境',
-  fullName: '跑者',
+  fullName: '中文姓名',
   email: 'E-mail',
   phoneNumber: '電話',
   dateOfBirth: '出生年份',
